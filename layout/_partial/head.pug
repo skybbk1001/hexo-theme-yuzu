@@ -51,4 +51,4 @@ head
   | !{ js('js/clipboard/clipboard.min.js') }
   | !{ js('js/bootstrap') }
   //- visit-count
-  | !{ partial('_partial/visit-count/script') }
+  | !{ partial('_partial/visit-count/script', null, {cache: true}) }

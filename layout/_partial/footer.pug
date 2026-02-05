@@ -13,9 +13,9 @@ footer.footer-nav
             | !{ config.beian.icp }
 
       if config.footer_links
-        | !{ partial('_partial/footer-links') }
+        | !{ partial('_partial/footer-links', null, {cache: true}) }
 
-      | !{ partial('_partial/visit-count/site-container') }
+      | !{ partial('_partial/visit-count/site-container', null, {cache: true}) }
       |
       | Copyright &copy;
       |
