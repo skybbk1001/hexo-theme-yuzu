@@ -138,12 +138,15 @@ del, s
 
   display: grid
 
-  // 在桌面端有2列，分别是正文和目录
-  grid-template-columns: @css{minmax(75%, 800px)} auto
-  // 移动端因为隐藏了目录所以只有1列，此时第2列的auto是不该存在的
-  // 否则会导致右侧有多余的空间，于是左右看起来不对称
-  @media (max-width: 768px)
-    grid-template-columns: @css{minmax(75%, 800px)}
+  if (hexo-config('toc.enable'))
+    // 在桌面端有2列，分别是正文和目录
+    grid-template-columns: @css{minmax(75%, 800px)} auto
+    // 移动端因为隐藏了目录所以只有1列，此时第2列的auto是不该存在的
+    // 否则会导致右侧有多余的空间，于是左右看起来不对称
+    @media (max-width: 768px)
+      grid-template-columns: @css{minmax(75%, 800px)}
+  else
+    grid-template-columns: @css{minmax(100%, 800px)}
 
   grid-column-gap: 20px
 
